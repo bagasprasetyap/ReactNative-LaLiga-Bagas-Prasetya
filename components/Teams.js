@@ -28,7 +28,7 @@ class Teams extends React.Component {
   constructor() {
     super();
     this.state = {
-      listTeams: [],
+      listTeams: "",
       isLoading: false
     };
   }
@@ -65,7 +65,8 @@ class Teams extends React.Component {
           key={i}
           onPress={() => {
             this.props.navigation.navigate("Players", {
-              idTeam: idTeam
+              idTeam: idTeam,
+              teamName: teamName
             });
           }}
         >

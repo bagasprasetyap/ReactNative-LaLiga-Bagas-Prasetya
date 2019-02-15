@@ -28,7 +28,7 @@ class Players extends React.Component {
   constructor() {
     super();
     this.state = {
-      listPlayers: [],
+      listPlayers: "",
       isLoading: false
       // idTeam: this.props.navigation.getParam("idTeam")
     };
@@ -64,12 +64,11 @@ class Players extends React.Component {
       return (
         <ListItem
           key={i}
-          // onPress={() => {
-          //   this.props.navigation.navigate("Players", {
-          //     idTeam: idTeam,
-          //     teamName: teamName
-          //   });
-          // }}
+          onPress={() => {
+            this.props.navigation.navigate("PlayerDetails", {
+              idPlayer: idPlayer
+            });
+          }}
         >
           <Left>
             <Thumbnail source={{ uri: playerPhoto }} />
